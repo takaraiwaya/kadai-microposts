@@ -9,9 +9,10 @@ class ApplicationController < ActionController::Base
       end
     end
     
-    def counts(user)
+    def counts(user)#引数にuser
       @count_microposts = user.microposts.count
       @count_followings = user.followings.count
       @count_followers = user.followers.count
+      @count_favorites = user.fav_microposts.count #userがお気に入りしたpost(fav_micropost)をカウント
     end
 end
