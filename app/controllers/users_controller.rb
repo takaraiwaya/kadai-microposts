@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def favorites
    @user = User.find(params[:id])#id(特定)userを探す
    counts(@user)#カウントメソッドに特定のuser渡しfav_micropostをカウント
-   @likes = @user.fav_microposts.order(id: :desc).page(params[:page])
+   @favorites = @user.fav_microposts.order(id: :desc).page(params[:page])
   end
   
   private
